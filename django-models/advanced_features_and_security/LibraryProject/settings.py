@@ -137,7 +137,53 @@ SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent browsers from MIME-sniffing
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
+SECURE_SSL_REDIRECT = True
+
+# HSTS setting: instructs browsers to only access your site via HTTPS for the specified time
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+# Include all subdomains in the HSTS policy
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# Allow your site to be included in the HSTS preload list
+SECURE_HSTS_PRELOAD = True
+
+SESSION_COOKIE_SECURE = True
+
+CSRF_COOKIE_SECURE = True
+
+
+X_FRAME_OPTIONS = 'DENY'
+
 # Ensure that Secure Cookies are only sent over HTTPS connections
 CSRF_COOKIE_HTTPONLY = True
 SESSION_COOKIE_HTTPONLY = True
 
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+SECURE_BROWSER_XSS_FILTER = True
+
+# SECURE_SSL_REDIRECT: Redirects all HTTP requests to HTTPS
+SECURE_SSL_REDIRECT = True
+
+# SECURE_HSTS_SECONDS: Sets the HSTS policy to 1 year
+SECURE_HSTS_SECONDS = 31536000
+
+# SECURE_HSTS_INCLUDE_SUBDOMAINS: Applies HSTS policy to all subdomains
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+# SECURE_HSTS_PRELOAD: Allows inclusion in HSTS preload list
+SECURE_HSTS_PRELOAD = True
+
+# SESSION_COOKIE_SECURE: Ensures session cookies are only transmitted over HTTPS
+SESSION_COOKIE_SECURE = True
+
+# CSRF_COOKIE_SECURE: Ensures CSRF cookies are only transmitted over HTTPS
+CSRF_COOKIE_SECURE = True
+
+# X_FRAME_OPTIONS: Prevents clickjacking by denying framing
+X_FRAME_OPTIONS = 'DENY'
+
+# SECURE_CONTENT_TYPE_NOSNIFF: Prevents MIME sniffing
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# SECURE_BROWSER_XSS_FILTER: Enables browser XSS filtering
+SECURE_BROWSER_XSS_FILTER = True
