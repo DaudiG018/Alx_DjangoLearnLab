@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import permission_required
 from .models import Article
-from .forms import ArticleForm
+from .forms import ArticleForm # type: ignore
 
 @permission_required('myapp.can_view', raise_exception=True)
 def article_list(request):
@@ -43,3 +43,5 @@ def article_delete(request, pk):
         return redirect('article_list')
     return render(request, 'articles/article_confirm_delete.html', {'article': article})
 
+# CSRF_COOKIE_SECURE: Ensures that the CSRF cookie is only sent over HTTPS connections.
+CSRF_COOKIE_SECURE = True
