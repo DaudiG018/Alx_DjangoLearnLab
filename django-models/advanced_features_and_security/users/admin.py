@@ -35,7 +35,7 @@ admin.site.register(CustomUser, CustomUserAdmin)
 
 from django.core.management.base import BaseCommand
 from django.contrib.auth.models import Group, Permission
-from myapp.models import Article
+from myapp.models import Article # type: ignore
 
 class Command(BaseCommand):
     def handle(self, *args, **kwargs):
