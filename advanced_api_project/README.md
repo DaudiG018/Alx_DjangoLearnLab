@@ -41,3 +41,17 @@
 - **Searching:** Searches across title and author fields.
 - **Ordering:** Sorts by title or publication year (ascending or descending).
 
+# API Testing
+
+## Testing Strategy
+
+- **CRUD Operations**: Ensure that Create, Retrieve, Update, and Delete operations for the Book model work correctly.
+- **Advanced Query Features**: Validate filtering, searching, and ordering functionalities.
+- **Permissions**: Verify that authentication and permissions are correctly enforced.
+
+## Running Tests
+
+1. Ensure the Django test server is set up.
+2. Run tests with the following command:
+   ```bash
+   python manage.py test api
