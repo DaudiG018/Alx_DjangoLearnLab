@@ -33,3 +33,10 @@
     {{ form.as_p }}
     <button type="submit">Submit</button>
 </form>
+
+<h3>Tags:</h3>
+<p>
+    {% for tag in post.tags.all %}
+        <a href="{% url 'posts_by_tag' tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+</p>

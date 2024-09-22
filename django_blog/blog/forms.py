@@ -16,14 +16,15 @@ class CustomUserCreationForm(UserCreationForm):
             user.save()
         return user
     
-from .models import Post
+from .models import Post, Tag
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content']
+        fields = ['title', 'content', 'tags']
         widgets = {
             'content': forms.Textarea(attrs={'rows': 5}),
+             'tags': forms.CheckboxSelectMultiple(),
         }
 
 from django import forms
