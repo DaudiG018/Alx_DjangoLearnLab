@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<header>
+    <h1>Register</h1>
+</header>
+<div class="content">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    <p>{% for message in messages %}{{ message }}{% endfor %}</p>
+</div>
