@@ -10,3 +10,26 @@
 </form>
 <a href="{% url 'post-list' %}">Back to Posts</a>
 {% endblock %}
+
+<h2>Comments</h2>
+{% for comment in comments %}
+    <div>
+        <p><strong>{{ comment.author.username }}</strong>: {{ comment.content }}</p>
+        {% if request.user == comment.author %}
+            <a href="{% url 'comment_edit' comment.id %}">Edit</a>
+            <form action="{% url 'comment_delete' comment.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        {% endif %}
+    </div>
+{% empty %}
+    <p>No comments yet.</p>
+{% endfor %}
+
+<h3>Add a Comment</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
