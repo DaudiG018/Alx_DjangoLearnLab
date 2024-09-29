@@ -1,8 +1,1 @@
-# Social Media API
-
-## Setup Process
-
-1. Install the dependencies:
-   ```bash
-   pip install django djangorestframework
-
+all about the app
